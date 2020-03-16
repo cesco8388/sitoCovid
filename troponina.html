@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang=''>
+<head>
+   <meta charset='utf-8'>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="styles.css">
+   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+   <script src="script.js"></script>
+   <link href="stile.css" rel="stylesheet">
+   <meta charset="UTF-8">
+   <script src="funzioni.js"></script>
+   <title>PS Pavullo</title>
+</head>
+<body>
+
+<div id='cssmenu'>
+<ul>
+   <li><a href='index.html'><span>Home</span></a></li>
+   <li class='active has-sub'><a href='#'><span>Coronavirus COVID-19</span></a>
+      <ul>
+            <li><a href='indicazioniCovid.html'><span>Indicazioni pratiche</span></a></li>
+            <li><a href='prefiltroCovid.html'><span>Pre-filtro</span></a></li>
+            <li><a href='118Covid.html'><span>Percorso territorio (118)</span></a></li>
+            <li><a href='PSCovid.html'><span>Percorso paziente sospetto in Pronto Soccorso</span></a></li>
+            <li><a href='definizioneCasoCovid.html'><span>Definizione caso sospetto</span></a></li>
+            <li class='last'><a href='fileCovid.html'><span>Materiale ufficiale</span></a></li>
+      </ul>
+   </li>
+   <li><a href='troponina.html'><span>Troponina</span></a></li>
+   <li class='last'><a href='#'><span>About</span></a></li>
+</ul>
+</div>
+
+<div id="paginaPrincipale">
+      <h1>Algoritmo troponina ultrasensibile</h1>
+		<section>
+			<form>
+				<input type="radio" name="genere" value="Maschio">Maschio<br>
+				<input type="radio" name="genere" value="Femmina">Femmina<br>
+			</form>
+			
+			<section>
+				<input type="checkbox" onclick="gestoreClick(this);" id="3ore" value="3ore">Dolore da più di tre ore<br>
+				<input type="checkbox" onclick="gestoreClick(this);" id="ECG" value="EcgNonIschemico">ECG <strong>senza</strong> segni di ischemia<br>
+				<input type="checkbox" onclick="gestoreClick(this);" id="Rischio" value="AltoRischio">Alto rischio clinico<br>
+			</section>			
+		</section>
+
+		<section>
+			<section>
+				<button onclick="annullaPunto('1punto');">Annulla 1° Punto</button>
+				1° Punto <input id="1punto" type="text" name="1punto" onchange="uscitaForm('1punto');">
+			</section>
+
+			<section>
+				<button onclick="annullaPunto('2punto');">Annulla 2° Punto</button>
+				2° Punto <input id="2punto" type="text" name="2punto" onchange="uscitaForm('2punto');">
+				a 3 ore dal 1° punto
+				Delta = <output id="delta1" class="delta"></output>(2° punto - 1° Punto)
+			</section>
+
+			<section>
+				<button onclick="annullaPunto('3punto');">Annulla 3° Punto</button>
+				3° Punto <input id="3punto" type="text" name="3punto" onchange="uscitaForm('3punto');">
+				a 3 ore dal 2° punto
+				Delta = <output id="delta2" class="delta"></output>(3° punto - 1° Punto)
+			</section>
+		</section>
+
+		<section>
+			<button class="PulsanteAnalizza" onclick="analisiPunti();">Analizza</button>
+			<output id="risultato" classe="campoRisultato"></output>
+		</section>
+		
+
+		<footer class="Disclaimer">
+		Questo strumento di analisi è ancora <strong>sperimentale</strong> e vuole essere solamente un <strong>aiuto</strong> nella lettura dell'algoritmo della nuova troponina ultrasensibile visto la presenza di alcuni conti matemaici
+		</footer>
+	</div>
+</body>
+<html>
+
