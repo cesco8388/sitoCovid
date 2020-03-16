@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/048f8ddf-e30c-48e3-ae07-31cb0ad0fb0c/resourceGroups/cesco8388_rg_Windows_northeurope/providers/Microsoft.Web/sites/ProntoSoccorsoPavullo",
+    "appService.deploySubpath": ""
+}
